@@ -42,3 +42,5 @@ We only have a couple of rules and we hope you enjoy the process :)
 10. Submit Pull Request
 
 It's that easy! We hope you enjoy contributing to our repository. Don't hesitate to contact any of the maintainers or ACM team about any problems!
+
+<h3> This is an official repository maintained by ACM PESUECC for Hacktoberfest 2021! </h3>
