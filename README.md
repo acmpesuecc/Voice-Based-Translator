@@ -28,6 +28,9 @@ We only have a couple of rules and we hope you enjoy the process :)
 1. Don't move or delete any files. Only modify them.
 2. Put all translator related codes in the Translatory.py file, found under the 'Code' folder.
 3. Put all new files (not related to the translator) in the main branch.
+4. All contributions have points assigned to them (All details regarding points will be mentioned in each of the issues created).
+8. Creating issues counts in as a contribution and earns you points too! (points are assigned based on the issue created).
+
 
 ## Contributing Process
 1. Fork the repository
