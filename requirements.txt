@@ -1,2 +1,4 @@
 gtts==2.2.2
 translate==3.5.0
+langdetect
+pycountry

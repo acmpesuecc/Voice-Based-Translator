@@ -3,6 +3,8 @@ import speech_recognition as spr
 from translate import *
 from gtts import gTTS
 import os
+from langdetect import detect
+import pycountry
 
 # Creating a recognizer instance
 recog = spr.Recognizer()
@@ -21,9 +23,22 @@ with mic as source:
     
     # Converting audio recorded into lower case text
     Text = recog.recognize_sphinx(audio).lower()
-    
+    print(Text)
+
+    #Detect language
+    lang = detect(Text)
+
+    #Decode the iso639 language code
+    lang = pycountry.languages.get(alpha_2=lang).name
+
+    print("You are speaking", lang, end=".\n")
+
+    if lang != "English":
+        translator = Translator("en")
+        Text = translator.translate(Text)
+
     # Looking for prompt
-    if 'hello' in Text:
+    if "hello" in Text :
         
         # Language code to be translated to - can be changed to translate to different languages
         to_lang = 'hi'
