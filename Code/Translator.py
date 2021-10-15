@@ -3,6 +3,7 @@ import speech_recognition as spr
 from translate import *
 from gtts import gTTS
 from googletrans import Translator
+import pycld2 as cld2
 import os
 
 # Creating a recognizer instance
@@ -26,6 +27,9 @@ with mic as source:
     # Detecting the language
     detector = Translator()
     detector.detect(Text)
+    
+    detected_language = cld2.detect(Text, returnVectors=True)
+    print(detected_language)
     
     # Looking for prompt
     if 'hello' in Text:
