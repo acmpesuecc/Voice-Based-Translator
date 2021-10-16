@@ -4,37 +4,6 @@ from translate import *
 from gtts import gTTS
 import os
 
-# Login
-uname = input("Enter username: ")
-paswd = input("Enter password: ")
-
-
-try:    # creates file if not present
-    f = open("data.csv","r")
-    f.close()
-except:
-    f = open("data.csv","w")
-    f.close()
-
-f = open("data.csv","r")
-
-flag = 0
-
-for i in f.readlines():
-    l = i.split(",")
-    if l[0]==uname and l[1]==paswd:
-        print("Login Successful!")
-        langg = l[2]
-        flag = 1
-
-if flag!=1:
-    f.close()
-    f = open("data.csv","a")
-    langg = input("Enter language preference: ")
-    f.write(uname+","+paswd+","+langg+"\n")
-    f.close()
-    print("Account created!")
-
 # Creating a recognizer instance
 recog = spr.Recognizer()
 
@@ -57,7 +26,7 @@ with mic as source:
     if 'hello' in Text:
         
         # Language code to be translated to - can be changed to translate to different languages
-        to_lang = langg
+        to_lang = 'hi'
         
         # Creating a translator instance
         translator = Translator(to_lang)
